@@ -12,7 +12,8 @@ const app = express();
 // handle bars
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
-
+// pody parser
+app.use(bodyParser.urlencoded({ extended: false }));
 // set static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
